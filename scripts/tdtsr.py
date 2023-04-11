@@ -47,10 +47,12 @@ if __name__ == "__main__":
     cfg = get_cfg()
 
     #set yaml
-    cfg.merge_from_file(args.yaml)
+    if args.yaml:
+        cfg.merge_from_file(args.yaml)
 
     #set model weights
-    cfg.MODEL.WEIGHTS = args.weights # Set path model .pth
+    if args.weights:
+        cfg.MODEL.WEIGHTS = args.weights # Set path model .pth
 
     predictor = DefaultPredictor(cfg) 
 
