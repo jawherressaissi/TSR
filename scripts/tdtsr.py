@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
     for file in files:
         img = cv2.imread(args.folder + "/" + file)
-        table_list, table_coords = table_detection.make_prediction(deskewed_image, predictor)
+        table_list, table_coords = td.make_prediction(img, predictor)
         list_table_boxes = []
 
         for table in table_list:
