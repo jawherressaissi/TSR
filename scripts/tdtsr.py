@@ -44,7 +44,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     #create detectron config
-    cfg = get_cfg(args.config)
+    cfg = get_cfg()
 
     #set yaml
     cfg.merge_from_file(args.yaml)
