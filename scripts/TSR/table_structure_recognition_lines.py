@@ -61,7 +61,6 @@ def recognize_structure(img):
     bitxor = cv2.bitwise_xor(img, img_vh)
     bitnot = cv2.bitwise_not(bitxor)
     # Plotting the generated image
-    cv2_imshow(bitnot)
 
     # Detect contours for following box detection
     contours, hierarchy = cv2.findContours(img_vh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -110,7 +109,6 @@ def recognize_structure(img):
             image = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
             box.append([x, y, w, h])
 
-    cv2_imshow(image)
 
     # Creating two lists to define row and column in which cell is located
     row = []
